@@ -2,11 +2,26 @@ var GMaap = GMaap || {}
 
 GMaap.Core = function(){
 	var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
+          center: new google.maps.LatLng(18.32, 73.52),
           zoom: 8
         };
         var map = new google.maps.Map(document.getElementById("map"),
-            mapOptions);
+            mapOptions);   
+               
+        var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(18.32, 73.52),
+			map: map,
+			title: 'Vishrant Wadi'
+		});
+		var marker1 = new google.maps.Marker({
+			position: new google.maps.LatLng(18.02, 73.52),
+			map: map,
+			title: 'ASK'
+		});
+		
+		google.maps.event.addListener(marker,"click",function(){
+			console.log("marker clicked");
+			})
     };
 		
 	
