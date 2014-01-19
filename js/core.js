@@ -16,11 +16,16 @@ GMaap.Core = function(){
 		var marker1 = new google.maps.Marker({
 			position: new google.maps.LatLng(18.02, 73.52),
 			map: map,
+			color:blue,
 			title: 'ASK'
 		});
+		var infoWindow = new google.maps.InfoWindow({
+			content: 'Hello there'
+			});
 		
 		google.maps.event.addListener(marker,"click",function(){
 			console.log("marker clicked");
+			infoWindow.open(map,marker);
 			})
     };
 		
